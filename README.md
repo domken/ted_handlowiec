@@ -19,7 +19,7 @@ Jeśli macOS zablokuje uruchomienie pliku .command, kliknij go prawym przyciskie
 - Wyszukiwarka ma filtry podobne do TED: zakres (najnowsze wydanie, aktywne lub archiwum), słowa w ogłoszeniu, CPV, kraj zamawiającego, miejsce realizacji, typ ogłoszenia, daty publikacji, sortowanie i liczbę wyników na stronie.
 - W wynikach wybierz Wczytaj pełny opis, aby pobrać XML tylko dla oglądanego ogłoszenia.
 - Wybór, status i notatka zapisują się lokalnie i pozostają po zamknięciu aplikacji.
-- Eksport wypełnia sześć arkuszy skoroszytu `ogloszenia_TED_uslugi_IT_szablon.xlsx`: listę, dane postępowania, zamawiającego, części, kryteria i wyniki. Zachowuje układ, tabele i formatowanie szablonu. W aplikacji wybierz folder zapisu; każde ogłoszenie zostanie zapisane jako osobny plik XLSX w tym folderze.
+- Eksport wypełnia sześć arkuszy skoroszytu `ogloszenia_TED_uslugi_IT_szablon.xlsx`: listę, dane postępowania, zamawiającego, części, kryteria i wyniki. Zachowuje układ, tabele i formatowanie szablonu. W aplikacji wybierz folder bazowy; metryczki zapisują się w jego podfolderze z datą generowania w formacie `YYYYMMDD` (np. `20261021`). Ogłoszenia z tego samego dnia trafiają do tego samego podfolderu.
 - Jako folder zapisu można wskazać lokalny folder biblioteki SharePoint synchronizowany przez OneDrive. Aplikacja zapamiętuje wybór na tym komputerze.
 - Pola, których nie ma w XML danego ogłoszenia, pozostają puste. Dane o częściach, kryteriach i wynikach są zapisywane w osobnych wierszach.
 - Przed przygotowaniem oferty potwierdź termin i dokumentację w TED.

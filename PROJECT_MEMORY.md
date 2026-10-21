@@ -19,6 +19,7 @@ Prosta aplikacja desktopowa uruchamiana lokalnie w przeglądarce. Handlowiec wys
 - Pozostałe domyślne filtry: najnowsze wydanie TED, kupujący z UE i Polska.
 - Sortowanie jest przekazywane w `sortColumn` i `sortOrder`, poza ciągiem `query`.
 - Metryczka zachowuje układ szablonu i zapisuje dane w osobnych arkuszach.
+- Eksport tworzy w wybranym katalogu bazowym podkatalog `YYYYMMDD` według lokalnej daty generowania; wszystkie metryczki eksportowane tego samego dnia trafiają do tego katalogu.
 - Aplikacja jest obecnie jednoosobowa i lokalna; zapisane wybory nie synchronizują się między komputerami.
 - Wydanie Windows/EXE i wdrożenie serwerowe są odłożone na później.
 

@@ -731,7 +731,7 @@ async function setStatus(number,status){await fetch('/api/status',{method:'POST'
 async function saveNote(number){let r=await fetch('/api/note',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({number:number,note:el('note-'+number).value})});if(r.ok){let n=rows.find(x=>x.number===number);if(n)n.note=el('note-'+number).value}}
 async function loadDescription(number){let target=el('desc-'+number);if(target)target.textContent='Pobieram XML…';try{let r=await fetch('/api/notice/'+number),d=await r.json();if(!r.ok)throw Error(d.error);if(target)target.textContent=d.notice.description||'W XML nie ma opisu głównego.'}catch(e){if(target)target.textContent=e.message}}
 async function showSelected(){error('');try{let r=await fetch('/api/selected'),d=await r.json();rows=d.notices||[];chosen=new Set(rows.map(n=>n.number));total=rows.length;currentPage=1;el('count').textContent='Zapisane wybory: '+rows.length;el('pages').style.display='none';render()}catch(e){error('Nie udało się odczytać zapisanych wyborów.')}}
-async function exportFiles(){let b=el('export');b.disabled=true;b.textContent='Zapisuję…';error('');el('export-result').textContent='';try{let r=await fetch('/api/export',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({numbers:Array.from(chosen)})}),d=await r.json();if(!r.ok)throw Error(d.error||'Nie udało się zapisać metryczek');el('export-result').textContent='Zapisano '+d.files.length+' metryczek w folderze wskazanym powyżej.'}catch(e){error(e.message)}finally{b.textContent='Zapisz metryczki';upd()}}
+async function exportFiles(){let b=el('export');b.disabled=true;b.textContent='Zapisuję…';error('');el('export-result').textContent='';try{let r=await fetch('/api/export',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({numbers:Array.from(chosen)})}),d=await r.json();if(!r.ok)throw Error(d.error||'Nie udało się zapisać metryczek');el('export-result').textContent='Zapisano '+d.files.length+' metryczek w folderze '+d.folder+'.'}catch(e){error(e.message)}finally{b.textContent='Zapisz metryczki';upd()}}
 ['text-query','cpv','buyer-country','place-country','notice-types','from','to','scope','sort','limit','latest-versions'].forEach(id=>el(id).addEventListener('change',renderFilters));renderFilters();loadOutputFolder();
 </script></body></html>'''
 
@@ -855,13 +855,18 @@ class Handler(BaseHTTPRequestHandler):
                         files.append((item["number"] + "_metryczka.xlsx", make_xlsx(notice)))
                     except (RuntimeError, ValueError) as exc:
                         return self.send_json({"error": "Ogłoszenie " + item["number"] + ": " + str(exc)}, 502)
+                dated_destination = destination / dt.date.today().strftime("%Y%m%d")
+                try:
+                    dated_destination.mkdir(parents=True, exist_ok=True)
+                except OSError as exc:
+                    return self.send_json({"error": "Nie udało się utworzyć folderu na metryczki: " + str(exc)}, 500)
                 saved = []
                 for filename, raw in files:
-                    target = destination / filename
+                    target = dated_destination / filename
                     stem, suffix = target.stem, target.suffix
                     counter = 2
                     while target.exists():
-                        target = destination / (stem + "_" + str(counter) + suffix)
+                        target = dated_destination / (stem + "_" + str(counter) + suffix)
                         counter += 1
                     try:
                         with target.open("xb") as output:
@@ -869,9 +874,9 @@ class Handler(BaseHTTPRequestHandler):
                     except OSError as exc:
                         completed = ", ".join(path.name for path in saved)
                         detail = (" Zapisano już: " + completed + ".") if completed else ""
-                        return self.send_json({"error": "Nie udało się zapisać plików w wybranym folderze: " + str(exc) + detail}, 500)
+                        return self.send_json({"error": "Nie udało się zapisać plików w folderze " + str(dated_destination) + ": " + str(exc) + detail}, 500)
                     saved.append(target)
-                return self.send_json({"ok": True, "folder": str(destination), "files": [path.name for path in saved]})
+                return self.send_json({"ok": True, "folder": str(dated_destination), "files": [path.name for path in saved]})
             self.send_json({"error": "Nie znaleziono endpointu."}, 404)
         except (ValueError, json.JSONDecodeError) as exc:
             self.send_json({"error": str(exc)}, 400)
