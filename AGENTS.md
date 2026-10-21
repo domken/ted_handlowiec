@@ -4,7 +4,7 @@ Przed zmianą zapoznaj się z `PROJECT_MEMORY.md` i `README.md`. Po każdej isto
 
 ## Zakres
 
-TED Handlowiec to lokalna aplikacja dla handlowca do wyszukiwania ogłoszeń TED, selekcji postępowań i eksportu metryczek do Excela. Główne środowisko pracy to macOS; wersję Windows można budować skryptem `Zbuduj_na_Windows.bat` albo workflow Gitea Actions `.gitea/workflows/windows-build.yml`.
+TED Handlowiec to lokalna aplikacja dla handlowca do wyszukiwania ogłoszeń TED, selekcji postępowań i eksportu metryczek do Excela. Główne środowisko pracy to macOS; preferowany build Windows działa przez GitHub Actions workflow `.github/workflows/windows-build.yml`. Gitea workflow jest opcjonalny i wymaga osobnego Windows runnera.
 
 ## Zasady pracy
 

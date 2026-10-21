@@ -21,8 +21,9 @@ Prosta aplikacja desktopowa uruchamiana lokalnie w przeglądarce. Handlowiec wys
 - Metryczka zachowuje układ szablonu i zapisuje dane w osobnych arkuszach.
 - Eksport tworzy w wybranym katalogu bazowym podkatalog `YYYYMMDD` według lokalnej daty generowania; wszystkie metryczki eksportowane tego samego dnia trafiają do tego katalogu.
 - Aplikacja jest obecnie jednoosobowa i lokalna; zapisane wybory nie synchronizują się między komputerami.
-- Wersja Windows jest pakowana do jednoplikowego EXE przez `Zbuduj_na_Windows.bat`; PyInstaller buduje Windowsowe EXE na Windows, a nie na macOS.
-- `.gitea/workflows/windows-build.yml` buduje EXE po pushu do `main` albo ręcznie; wymaga włączonych Gitea Actions i runnera z etykietą `windows-latest`. Artefakt zostaje na 30 dni.
+- Wersja Windows jest pakowana do jednoplikowego EXE przez PyInstaller na runnerze Windows; PyInstaller nie jest cross-kompilatorem.
+- Preferowany CI to `.github/workflows/windows-build.yml`, który buduje po pushu do `main` albo ręcznie i udostępnia artefakt na 30 dni. Projekt ma zdalne repozytorium Gitea; do uruchomienia tego workflow potrzebne jest też prywatne repo GitHub.
+- `.gitea/workflows/windows-build.yml` pozostaje alternatywą wymagającą włączonych Gitea Actions i własnego runnera z etykietą `windows-latest`.
 - Wdrożenie serwerowe jest odłożone na później.
 
 ## Następne obszary pracy

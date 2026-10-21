@@ -15,9 +15,9 @@ Jeśli macOS zablokuje uruchomienie pliku .command, kliknij go prawym przyciskie
 
 ## Wersja Windows
 
-Plik `Zbuduj_na_Windows.bat` przygotowuje jednoplikowe `dist\TEDHandlowiec.exe`. Uruchom go na komputerze z Windows, na którym jest Python 3.10 lub nowszy oraz dostęp do internetu. Python jest potrzebny tylko do zbudowania EXE; gotowa aplikacja nie wymaga Pythona. Uruchom EXE dwuklikiem; aplikacja otworzy się w przeglądarce. Aby ją zamknąć, zamknij okno konsoli uruchomione razem z EXE.
+Preferowany build działa przez GitHub Actions: workflow `.github/workflows/windows-build.yml` buduje EXE na runnerze Windows po każdym pushu do `main` oraz na żądanie. W repozytorium GitHub otwórz **Actions**, wybierz **Build Windows app**, uruchom workflow lub otwórz ostatni udany run i pobierz artefakt `TEDHandlowiec-Windows`. Artefakt jest przechowywany przez 30 dni.
 
-Workflow `.gitea/workflows/windows-build.yml` buduje EXE na runnerze Windows po każdym pushu do `main` oraz na żądanie. W Gitea muszą być włączone Actions i dostępny runner z etykietą `windows-latest`. Plik `TEDHandlowiec.exe` będzie dostępny przez 30 dni jako artefakt w szczegółach uruchomienia Actions.
+Alternatywnie `Zbuduj_na_Windows.bat` buduje `dist\TEDHandlowiec.exe` na lokalnym komputerze Windows z Pythonem 3.10+ i dostępem do internetu. Gotowy EXE nie wymaga Pythona; zamyka się przez zamknięcie okna konsoli uruchomionego razem z aplikacją. Workflow Gitea `.gitea/workflows/windows-build.yml` wymaga włączonych Gitea Actions i dostępnego runnera Windows z etykietą `windows-latest`.
 
 ## Obsługa
 
