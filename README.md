@@ -17,6 +17,8 @@ Jeśli macOS zablokuje uruchomienie pliku .command, kliknij go prawym przyciskie
 
 Plik `Zbuduj_na_Windows.bat` przygotowuje jednoplikowe `dist\TEDHandlowiec.exe`. Uruchom go na komputerze z Windows, na którym jest Python 3.10 lub nowszy oraz dostęp do internetu. Python jest potrzebny tylko do zbudowania EXE; gotowa aplikacja nie wymaga Pythona. Uruchom EXE dwuklikiem; aplikacja otworzy się w przeglądarce. Aby ją zamknąć, zamknij okno konsoli uruchomione razem z EXE.
 
+Po opublikowaniu repozytorium na GitHubie workflow `.github/workflows/windows-build.yml` będzie budował EXE na runnerze Windows po każdym pushu do `main` oraz na żądanie. Plik `TEDHandlowiec.exe` będzie dostępny przez 30 dni jako artefakt w szczegółach danego uruchomienia w zakładce Actions.
+
 ## Obsługa
 
 - Domyślnie wybrane są najnowsze wydanie TED, gałęzie CPV 72* (usługi IT) i 48* (oprogramowanie i systemy informatyczne) oraz kraje zamawiającego UE i Polska. Filtr CPV przyjmuje wiele kodów oddzielonych przecinkami; gwiazdka szuka całej gałęzi, np. `7226*`. Puste pole wyłącza filtr.

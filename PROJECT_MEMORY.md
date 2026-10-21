@@ -22,6 +22,7 @@ Prosta aplikacja desktopowa uruchamiana lokalnie w przeglądarce. Handlowiec wys
 - Eksport tworzy w wybranym katalogu bazowym podkatalog `YYYYMMDD` według lokalnej daty generowania; wszystkie metryczki eksportowane tego samego dnia trafiają do tego katalogu.
 - Aplikacja jest obecnie jednoosobowa i lokalna; zapisane wybory nie synchronizują się między komputerami.
 - Wersja Windows jest pakowana do jednoplikowego EXE przez `Zbuduj_na_Windows.bat`; PyInstaller buduje Windowsowe EXE na Windows, a nie na macOS.
+- `.github/workflows/windows-build.yml` buduje EXE na GitHub-hosted Windows runnerze po pushu do `main` albo ręcznie; artefakt zostaje na 30 dni. Workflow zacznie działać po opublikowaniu repozytorium na GitHubie.
 - Wdrożenie serwerowe jest odłożone na później.
 
 ## Następne obszary pracy
