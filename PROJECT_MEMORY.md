@@ -21,10 +21,11 @@ Prosta aplikacja desktopowa uruchamiana lokalnie w przeglądarce. Handlowiec wys
 - Metryczka zachowuje układ szablonu i zapisuje dane w osobnych arkuszach.
 - Eksport tworzy w wybranym katalogu bazowym podkatalog `YYYYMMDD` według lokalnej daty generowania; wszystkie metryczki eksportowane tego samego dnia trafiają do tego katalogu.
 - Aplikacja jest obecnie jednoosobowa i lokalna; zapisane wybory nie synchronizują się między komputerami.
-- Wydanie Windows/EXE i wdrożenie serwerowe są odłożone na później.
+- Wersja Windows jest pakowana do jednoplikowego EXE przez `Zbuduj_na_Windows.bat`; PyInstaller buduje Windowsowe EXE na Windows, a nie na macOS.
+- Wdrożenie serwerowe jest odłożone na później.
 
 ## Następne obszary pracy
 
 - Doprecyzować zestaw CPV dla usług informatycznych i powiązanych na podstawie zakresu działalności użytkownika.
 - Rozwijać i weryfikować wyszukiwanie względem interfejsu TED oraz realnych wyników API.
-- Później przygotować pakowanie na Windows, zachowując prosty sposób uruchamiania.
+- Sprawdzić gotowe EXE na Windows i dopracować instrukcje pierwszego uruchomienia.

@@ -4,7 +4,7 @@ Przed zmianą zapoznaj się z `PROJECT_MEMORY.md` i `README.md`. Po każdej isto
 
 ## Zakres
 
-TED Handlowiec to lokalna aplikacja dla handlowca do wyszukiwania ogłoszeń TED, selekcji postępowań i eksportu metryczek do Excela. Obecne środowisko pracy i testów to macOS. Wydanie Windows jako EXE jest przyszłym etapem.
+TED Handlowiec to lokalna aplikacja dla handlowca do wyszukiwania ogłoszeń TED, selekcji postępowań i eksportu metryczek do Excela. Główne środowisko pracy to macOS; wersja Windows jest budowana jako jednoplikowe EXE skryptem `Zbuduj_na_Windows.bat`.
 
 ## Zasady pracy
 

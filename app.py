@@ -516,7 +516,8 @@ def column(n: int) -> str:
 
 def make_xlsx(notice: dict[str, Any]) -> bytes:
     """Wypełnia firmowy, pusty skoroszyt danymi jednego ogłoszenia TED."""
-    template = Path(__file__).with_name("ogloszenia_TED_uslugi_IT_szablon.xlsx")
+    bundle_dir = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
+    template = bundle_dir / "ogloszenia_TED_uslugi_IT_szablon.xlsx"
     if not template.is_file():
         raise RuntimeError("Brakuje szablonu metryczki obok aplikacji: " + template.name)
 

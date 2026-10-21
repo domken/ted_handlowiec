@@ -13,6 +13,10 @@ Aplikacja nie wymaga dodatkowych bibliotek Pythona. Wymaga Pythona 3.10 lub nows
 
 Jeśli macOS zablokuje uruchomienie pliku .command, kliknij go prawym przyciskiem i wybierz Otwórz.
 
+## Wersja Windows
+
+Plik `Zbuduj_na_Windows.bat` przygotowuje jednoplikowe `dist\TEDHandlowiec.exe`. Uruchom go na komputerze z Windows, na którym jest Python 3.10 lub nowszy oraz dostęp do internetu. Python jest potrzebny tylko do zbudowania EXE; gotowa aplikacja nie wymaga Pythona. Uruchom EXE dwuklikiem; aplikacja otworzy się w przeglądarce. Aby ją zamknąć, zamknij okno konsoli uruchomione razem z EXE.
+
 ## Obsługa
 
 - Domyślnie wybrane są najnowsze wydanie TED, gałęzie CPV 72* (usługi IT) i 48* (oprogramowanie i systemy informatyczne) oraz kraje zamawiającego UE i Polska. Filtr CPV przyjmuje wiele kodów oddzielonych przecinkami; gwiazdka szuka całej gałęzi, np. `7226*`. Puste pole wyłącza filtr.
