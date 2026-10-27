@@ -235,7 +235,8 @@ def do_search(params: dict[str, Any]) -> dict[str, Any]:
     type_filter = str(params.get("notice_types", "all"))
     type_map = {
         "tenders": "cn-standard cn-social cn-desg",
-        "awards": "can-standard can-social can-desg",
+        "awards": "can-standard can-social can-desg can-tran",
+        "changes": "can-modif",
     }
     if type_filter in type_map:
         clauses.append("notice-type IN (" + type_map[type_filter] + ")")
@@ -705,7 +706,7 @@ h1{font-size:21px;margin:0;color:var(--navy)}h2{font-size:18px;margin:0;color:va
 <div class="field"><label for="cpv">Kody CPV</label><input id="cpv" value="72*, 48*" placeholder="np. 72*, 48*, 7226*"><div class="muted">* szuka całej gałęzi kodów. Wpisz kilka kodów po przecinku. Puste pole wyłącza filtr.</div></div>
 <div class="field"><label for="buyer-country">Kraj zamawiającego</label><select id="buyer-country"><option value="EU POL" selected>UE i Polska (jak w TED)</option><option value="POL">Polska</option><option value="EU">Instytucje UE</option><option value="">Wszystkie kraje</option></select></div>
 <div class="field"><label for="place-country">Miejsce realizacji</label><select id="place-country"><option value="">Dowolne</option><option value="POL">Polska</option><option value="DEU">Niemcy</option><option value="CZE">Czechy</option><option value="SVK">Słowacja</option><option value="LTU">Litwa</option></select></div>
-<div class="field"><label for="notice-types">Rodzaj ogłoszenia</label><select id="notice-types"><option value="all" selected>Wszystkie</option><option value="tenders">Ogłoszenia o zamówieniu</option><option value="awards">Ogłoszenia o udzieleniu</option></select></div>
+<div class="field"><label for="notice-types">Rodzaj ogłoszenia</label><select id="notice-types"><option value="all" selected>Wszystkie</option><option value="tenders">Ogłoszenia o zamówieniu</option><option value="awards">Ogłoszenia o wynikach</option><option value="changes">Ogłoszenia o zmianach</option></select></div>
 <div class="field"><label>Data publikacji</label><div class="date-grid"><input id="from" type="date" aria-label="Data publikacji od"><input id="to" type="date" aria-label="Data publikacji do"></div></div>
 <div class="field"><label for="sort">Sortuj według</label><select id="sort"><option value="publication-number|DESC" selected>Numer publikacji — malejąco</option><option value="publication-date|DESC">Data publikacji — najnowsze</option><option value="deadline-receipt-tender-date-lot|ASC">Termin składania — najbliższy</option><option value="estimated-value-proc|DESC">Wartość — najwyższa</option></select></div>
 <div class="field"><label for="limit">Wyników na stronę</label><select id="limit"><option>25</option><option>50</option><option selected>100</option><option>250</option></select></div></div>
