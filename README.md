@@ -23,7 +23,7 @@ Alternatywnie `Zbuduj_na_Windows.bat` buduje `dist\TEDHandlowiec.exe` na lokalny
 
 - Domyślnie wybrane są najnowsze wydanie TED, gałęzie CPV 72* (usługi IT) i 48* (oprogramowanie i systemy informatyczne) oraz kraje zamawiającego UE i Polska. Filtr CPV przyjmuje wiele kodów oddzielonych przecinkami; gwiazdka szuka całej gałęzi, np. `7226*`. Puste pole wyłącza filtr.
 - Wyszukiwarka ma filtry podobne do TED: zakres (najnowsze wydanie, aktywne lub archiwum), słowa w ogłoszeniu, CPV, kraj zamawiającego, miejsce realizacji, typ ogłoszenia, daty publikacji, sortowanie i liczbę wyników na stronie. Typ można ograniczyć do ogłoszeń o zamówieniu, wynikach, zmianach lub planów zakupu; aplikacja filtruje API TED po kodach `notice-type`.
-- W wynikach wybierz Wczytaj pełny opis, aby pobrać XML tylko dla oglądanego ogłoszenia.
+- Linki do ogłoszeń w TED otwierają polską wersję serwisu. W wynikach wybierz Wczytaj pełny opis, aby pobrać XML tylko dla oglądanego ogłoszenia.
 - Wybór, status i notatka zapisują się lokalnie i pozostają po zamknięciu aplikacji.
 - Eksport wypełnia sześć arkuszy skoroszytu `ogloszenia_TED_uslugi_IT_szablon.xlsx`: listę, dane postępowania, zamawiającego, części, kryteria i wyniki. Zachowuje układ, tabele i formatowanie szablonu. W aplikacji wybierz folder bazowy; metryczki zapisują się w jego podfolderze z datą generowania w formacie `YYYYMMDD` (np. `20261021`). Ogłoszenia z tego samego dnia trafiają do tego samego podfolderu.
 - Jako folder zapisu można wskazać lokalny folder biblioteki SharePoint synchronizowany przez OneDrive. Aplikacja zapamiętuje wybór na tym komputerze.

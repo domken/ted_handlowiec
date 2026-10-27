@@ -18,6 +18,7 @@ Prosta aplikacja desktopowa uruchamiana lokalnie w przeglądarce. Handlowiec wys
 - Domyślny CPV to prefiksy `72*` (usługi informatyczne) i `48*` (oprogramowanie i systemy informatyczne). Można wpisać kilka kodów rozdzielonych przecinkami, średnikami lub spacjami; `*` oznacza początek kodu i wyszukuje całą gałąź. Puste pole wyłącza filtr.
 - Filtr rodzaju ogłoszenia obsługuje wszystkie typy oraz trzy grupy: zamówienia (`notice-type IN (cn-standard cn-social cn-desg)`), wyniki (`can-standard can-social can-desg can-tran`) i zmiany (`can-modif`). Kody wynikają z codelist TED eForms (`competition`, `result`, `cont-modif`).
 - Plany zakupu są filtrowane kodami `notice-type IN (pin-buyer pin-only pin-rtl pin-tran)`, zgodnie z codelistą TED eForms `planning`.
+- Bezpośrednie linki do strony ogłoszenia TED używają polskiej ścieżki językowej `/pl/notice/-/detail/`.
 - Pozostałe domyślne filtry: najnowsze wydanie TED, kupujący z UE i Polska.
 - Sortowanie jest przekazywane w `sortColumn` i `sortOrder`, poza ciągiem `query`.
 - Metryczka zachowuje układ szablonu i zapisuje dane w osobnych arkuszach.

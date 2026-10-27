@@ -191,7 +191,7 @@ def norm_notice(item: dict[str, Any]) -> dict[str, Any]:
         "procedure_type": scalar(item.get("procedure-type")),
         "form_type": scalar(item.get("form-type")),
         "xml_url": xml_url,
-        "ted_url": "https://ted.europa.eu/en/notice/-/detail/" + number,
+        "ted_url": "https://ted.europa.eu/pl/notice/-/detail/" + number,
     }
 
 
